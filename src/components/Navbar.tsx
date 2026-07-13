@@ -20,7 +20,10 @@ export default function Navbar() {
             <Link to="/perfil" className={isActive('/perfil')}>Perfil</Link>
           </>
         ) : (
-          <Link to="/login" className="navbar-btn">Registrarse</Link>
+          <>
+            <Link to="/login" className="btn btn-secondary">Iniciar Sesión</Link>
+            <Link to="/login" className="navbar-btn">Registrarse</Link>
+          </>
         )}
       </div>
     </nav>

@@ -11,6 +11,13 @@ export default function Login() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!nombre.trim() || !telefono.trim()) return;
+    
+    // Check for admin login
+    if (nombre.trim().toLowerCase() === 'admin' && telefono.trim() === 'admin') {
+      navigate('/admin/dashboard');
+      return;
+    }
+
     setCliente({
       nombre: nombre.trim(),
       telefono: telefono.trim(),
