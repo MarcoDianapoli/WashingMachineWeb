@@ -43,7 +43,7 @@ interface AppState {
   setTamanoVehiculo: (type: string | null) => void;
   paquetes: PaqueteConTamano[];
   cliente: Cliente | null;
-  setCliente: (c: Cliente) => void;
+  setCliente: (c: Cliente | null) => void;
   citas: Cita[];
   agregarCita: (cita: Cita) => void;
   cancelarCita: (id: string) => void;
