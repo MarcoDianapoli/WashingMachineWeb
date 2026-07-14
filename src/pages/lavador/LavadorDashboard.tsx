@@ -59,12 +59,12 @@ export default function LavadorDashboard() {
       );
       
       scanner.render(
-        (decodedText) => {
+        (decodedText: string) => {
           setScanResult(decodedText);
           // Auto close scanner on success
           scanner?.clear();
         },
-        (error) => {
+        (error: any) => {
           // Ignore scanning errors (happens when no QR found yet)
         }
       );
@@ -72,7 +72,7 @@ export default function LavadorDashboard() {
     
     return () => {
       if (scanner) {
-        scanner.clear().catch(e => console.error(e));
+        scanner.clear().catch((e: any) => console.error(e));
       }
     };
   }, [scannerOpen]);
