@@ -24,7 +24,7 @@ export default function Login() {
   };
 
   return (
-    <div className="page" style={{ maxWidth: 500 }}>
+    <div className="page" style={{ maxWidth: 500, width: '100%', margin: '0 auto' }}>
       <h1 className="page-title" style={{ textAlign: 'center' }}>Acceso al Personal</h1>
       <p style={{ textAlign: 'center', color: 'var(--gray)', marginBottom: 32 }}>
         Inicia sesión para acceder al panel de administración.
