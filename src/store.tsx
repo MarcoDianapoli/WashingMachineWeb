@@ -59,6 +59,8 @@ interface AppState {
   lavadores: Lavador[];
   agregarLavador: (lavador: Lavador) => void;
   editarLavador: (id: string, lavador: Partial<Lavador>) => void;
+  authUser: any;
+  setAuthUser: (user: any) => void;
 }
 
 const AppContext = createContext<AppState | null>(null);
@@ -109,6 +111,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [cliente, setCliente] = useState<Cliente | null>(null);
   const [citas, setCitas] = useState<Cita[]>(CITAS_MOCK);
   const [lavadores, setLavadores] = useState<Lavador[]>(LAVADORES_MOCK);
+  const [authUser, setAuthUser] = useState<any>(null);
   const loaded = useRef(false);
 
   useEffect(() => {
@@ -187,6 +190,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
         lavadores,
         agregarLavador,
         editarLavador,
+        authUser,
+        setAuthUser,
       }}
     >
       {children}

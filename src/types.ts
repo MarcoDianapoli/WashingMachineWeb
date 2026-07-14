@@ -52,7 +52,7 @@ export interface Cita {
   fecha: string;
   hora: string;
   cliente: Cliente;
-  estado: 'pendiente' | 'confirmada' | 'en_proceso' | 'completada' | 'cancelada';
+  estado: 'pendiente' | 'confirmada' | 'en_proceso' | 'listo_entrega' | 'completada' | 'cancelada';
   lavadorId?: string;
   lavadorNombre?: string;
   metodoPago?: MetodoPago;
