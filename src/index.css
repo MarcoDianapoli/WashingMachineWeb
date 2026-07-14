@@ -1510,6 +1510,16 @@ textarea.input-field {
     justify-content: center;
   }
   
+  .testimonials-with-image {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonials-image-wrapper {
+    position: static;
+    margin-top: 24px;
+    max-width: 100%;
+  }
+  
   .admin-topbar {
     padding: 0 16px;
   }
