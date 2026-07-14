@@ -22,7 +22,6 @@ export default function Navbar() {
         ) : (
           <>
             <Link to="/login" className="btn btn-secondary">Iniciar Sesión</Link>
-            <Link to="/login" className="navbar-btn">Registrarse</Link>
           </>
         )}
       </div>

@@ -13,8 +13,10 @@ import Exito from './pages/Exito';
 // Admin imports
 import AdminLayout from './components/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminCitas from './pages/admin/AdminCitas';
+import AdminLavadores from './pages/admin/AdminLavadores';
 import AdminPlaceholder from './pages/admin/AdminPlaceholder';
-import { Wrench, Users, DollarSign, Package, Settings } from 'lucide-react';
+import { Users, DollarSign, Package, Settings } from 'lucide-react';
 
 export default function App() {
   return (
@@ -23,7 +25,8 @@ export default function App() {
         {/* Rutas de Administrador */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="dashboard" element={<AdminDashboard />} />
-          <Route path="lavadores" element={<AdminPlaceholder title="Lavadores" icon={<Wrench size={64} />} />} />
+          <Route path="citas" element={<AdminCitas />} />
+          <Route path="lavadores" element={<AdminLavadores />} />
           <Route path="clientes" element={<AdminPlaceholder title="Clientes" icon={<Users size={64} />} />} />
           <Route path="finanzas" element={<AdminPlaceholder title="Finanzas" icon={<DollarSign size={64} />} />} />
           <Route path="inventario" element={<AdminPlaceholder title="Inventario" icon={<Package size={64} />} />} />
