@@ -1,0 +1,70 @@
+@host = http://localhost:3000
+# Pegar acá el token que devuelve /auth/login
+@token = xxx
+
+### Login (admin seed)
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@monkey.com",
+  "password": "admin"
+}
+
+### Registro de cliente
+POST {{host}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Juan Pérez",
+  "email": "juan@example.com",
+  "password": "secreto123",
+  "phone": "5551234567"
+}
+
+### Perfil propio
+GET {{host}}/auth/me
+Authorization: Bearer {{token}}
+
+### Cerrar sesión actual
+POST {{host}}/auth/logout
+Authorization: Bearer {{token}}
+
+### Cerrar todas las sesiones
+POST {{host}}/auth/logout-all
+Authorization: Bearer {{token}}
+
+### Listar usuarios (admin)
+GET {{host}}/users
+Authorization: Bearer {{token}}
+
+### Listar solo lavadores (admin)
+GET {{host}}/users?role=washer
+Authorization: Bearer {{token}}
+
+### Crear lavador (admin)
+POST {{host}}/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Carlos Rodríguez",
+  "email": "carlos@monkey.com",
+  "password": "secreto123",
+  "phone": "555-1111",
+  "role": "washer",
+  "specialty": "Lavado de Interiores"
+}
+
+### Editar usuario (admin)
+PATCH {{host}}/users/AQUI_EL_ID
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "phone": "555-9999"
+}
+
+### Desactivar usuario (admin)
+DELETE {{host}}/users/AQUI_EL_ID
+Authorization: Bearer {{token}}
